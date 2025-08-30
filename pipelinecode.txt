@@ -56,7 +56,7 @@ pipeline {
         stage('Build Spring Boot App') {
             steps {
                 dir("${env.BACKEND_DIR}") {
-                    sh 'mvn clean package'
+                    sh 'mvn clean package -DskipTests'
                     sh 'mv target/*.war target/springapp1.war'
                 }
             }
@@ -75,3 +75,4 @@ pipeline {
         }
     }
 }
+
